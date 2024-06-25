@@ -1,0 +1,11 @@
+<div class="bg-gray-100 shadow-md rounded-lg p-6">
+  <h2 class="text-lg font-semibold text-gray-800 mb-2"><%= admin_faq.question %></h2>
+  <p class="text-gray-700 mb-4"><%= truncate(admin_faq.answer, length: 100) %></p>
+  <div class="flex justify-between items-center">
+    <a href="#" class="text-blue-500 hover:underline">Read More</a>
+    <div class="space-x-2">
+      <%= link_to "Edit", edit_admin_faq_path(admin_faq), class: "text-blue-500 hover:underline" %>
+      <%= link_to "Delete", admin_faq_path(admin_faq), method: :delete, data: { confirm: "Are you sure?" }, class: "text-red-500 hover:underline" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container mx-auto my-10 p-5 bg-white shadow-md rounded-lg">
+  <h1 class="text-2xl font-semibold text-gray-800 mb-6">FAQs</h1>
+
+  <div id="admin_faqs" class="space-y-6">
+    <% @faqs.each do |admin_faq| %>
+      <%= render partial: 'faq', locals: { admin_faq: admin_faq } %>
+      <div class="flex justify-end">
+        <%= link_to "Show this FAQ", admin_faq_path(admin_faq), class: "px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mt-6">
+    <%= link_to "New FAQ", new_admin_faq_path, class: "px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700" %>
+  </div>
+</div>

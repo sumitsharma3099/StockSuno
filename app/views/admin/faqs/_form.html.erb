@@ -1,0 +1,26 @@
+<%= form_with(model: admin_faq, url: admin_faq.persisted? ? admin_faq_path(admin_faq) : admin_faqs_path, method: admin_faq.persisted? ? :patch : :post, class: "bg-white shadow-md rounded-lg p-6") do |form| %>
+  <% if admin_faq.errors.any? %>
+    <div class="mb-4">
+      <h2 class="text-red-600"><%= pluralize(admin_faq.errors.count, "error") %> prohibited this FAQ from being saved:</h2>
+      <ul class="list-disc list-inside text-red-600">
+        <% admin_faq.errors.full_messages.each do |error_message| %>
+          <li><%= error_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-4">
+    <%= form.label :question, class: "block text-gray-700 font-bold mb-2" %>
+    <%= form.text_field :question, class: "form-input w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500", placeholder: "Enter question..." %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :answer, class: "block text-gray-700 font-bold mb-2" %>
+    <%= form.text_area :answer, class: "form-textarea w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500", placeholder: "Enter answer...", rows: 5 %>
+  </div>
+
+  <div>
+    <%= form.submit "Save FAQ", class: "px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none" %>
+  </div>
+<% end %>

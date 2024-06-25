@@ -1,0 +1,12 @@
+<!-- app/views/admin/news/index.html.erb -->
+<h1 class="text-2xl font-bold mb-6">Manage News</h1>
+
+<div id="admin_news" class="space-y-6">
+  <% @news_articles.each do |news_article| %>
+    <%= render partial: 'news', locals: { news_article: news_article } %>
+  <% end %>
+</div>
+
+<div class="mt-6">
+  <%= link_to "New News", new_admin_news_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+</div>

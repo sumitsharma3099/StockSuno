@@ -1,0 +1,9 @@
+<div class="container mx-auto my-10 p-5 bg-white shadow-md rounded-lg">
+  <h1 class="text-2xl font-semibold text-gray-800 mb-6"><%= action_name.capitalize %> FAQ</h1>
+
+  <%= render "form", admin_faq: @faq %>
+
+  <div class="mt-6">
+    <%= link_to "Back to FAQs", admin_faqs_path, class: "px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700" %>
+  </div>
+</div>

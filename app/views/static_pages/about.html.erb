@@ -1,0 +1,17 @@
+<!-- app/views/static_pages/about.html.erb -->
+<div class="container mx-auto px-4 py-8">
+  <div class="text-center mb-8">
+    <h1 class="text-4xl font-bold text-gray-800">About Us</h1>
+  </div>
+
+  <div class="flex flex-wrap -mx-4">
+    <div class="w-full md:w-1/2 px-4">
+      <img src="<%= @about_us.image_link %>" alt="About Us Image" class="w-full md:w-3/4 h-auto rounded-lg shadow-md mx-auto">
+    </div>
+    <div class="w-full md:w-1/2 px-4">
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        <%= simple_format(@about_us.content) %>
+      </p>
+    </div>
+  </div>
+</div>

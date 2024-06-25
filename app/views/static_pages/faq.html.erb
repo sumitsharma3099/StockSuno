@@ -1,0 +1,23 @@
+<!-- app/views/static_pages/faq.html.erb -->
+<div class="container mx-auto px-4 py-8">
+  <div class="text-center mb-8">
+    <h1 class="text-4xl font-bold text-gray-800">Frequently Asked Questions</h1>
+  </div>
+
+  <div class="max-w-3xl mx-auto">
+    <% @faqs.each_with_index do |faq, index| %>
+      <div class="mb-6 border-b border-gray-200">
+        <h2>
+          <button class="flex justify-between items-center w-full py-4 text-2xl font-semibold text-gray-800 focus:outline-none" onclick="document.getElementById('faq<%= index + 1 %>').classList.toggle('hidden')">
+            <i class="fas fa-question-circle mr-2"></i>
+            <%= faq.question %>
+            <i class="fas fa-chevron-down ml-auto"></i>
+          </button>
+        </h2>
+        <div id="faq<%= index + 1 %>" class="hidden text-lg text-gray-700 leading-relaxed mb-4">
+          <%= faq.answer %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

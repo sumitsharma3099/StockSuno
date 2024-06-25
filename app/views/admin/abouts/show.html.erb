@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @admin_about %>
+
+<div>
+  <%= link_to "Edit this about", edit_admin_about_path(@admin_about) %> |
+  <%= link_to "Back to abouts", admin_abouts_path %>
+
+  <%= button_to "Destroy this about", @admin_about, method: :delete %>
+</div>
